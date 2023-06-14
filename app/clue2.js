@@ -11,6 +11,7 @@
 
 function returnIndex(arr, str) {
   // TODO your code here
+  return arr.findIndex(country => country == str)
 }
 
 //-------------------------------------------
@@ -24,6 +25,7 @@ function returnIndex(arr, str) {
 
 function hasName(arr, name) {
   // TODO your code here
+  return arr.includes(name)
 }
 
 //-------------------------------------------
@@ -44,6 +46,11 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 
 function findById(id) {
   // TODO YOUR CODE HERE
+  let foundPerson - staff.find(person => person.id == id)
+  if (!foundPerson) {
+    return { error: "No user with that id." }
+  }
+  return foundPerson;
 }
 
 //-------------------------------------------
@@ -71,6 +78,7 @@ let theBand = {
 
 function bandMemberDetails(name) {
   // TODO YOUR CODE HERE
+  theBand.members
 }
 
 //-------------------------------------------
@@ -107,4 +115,9 @@ let flights = [{
 
 function flightCost(destination, firstClass) {
   // TODO YOUR CODE HERE
+  let foundFlight = flights.find(flight => flight.to == destination)
+  if (firstclass) {
+    return foundFlight.prices.firstClass
+
+  }
 }
